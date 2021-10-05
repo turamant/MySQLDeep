@@ -6,14 +6,13 @@ try:
         option_files="config.ini")
 
     # db1 = mysql.connector.MySQLConnection(
-    #    **connect_args
-    #    )
+    #    option_files="config.ini")
 
     # db1 = mysql.connector.MySQLConnection()
-    # db1.connect(**connect_args)
+    # db1.connect(option_files="config.ini")
 
     # db1 = mysql.connector.MySQLConnection()
-    # db1.config(**connect_args)
+    # db1.config(option_files="config.ini")
     # db1.connect()
 
     print("Успешное соединение с БД ")
@@ -22,6 +21,7 @@ try:
 except:
     print("Connection with Base Data error!")
     sys.exit(1)
+
 cursor = db1.cursor()
 try:
     cursor.execute("SELECT ID, Name from city")
