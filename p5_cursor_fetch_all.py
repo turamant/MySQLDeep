@@ -8,14 +8,16 @@ def query_with_fetchone():
         )
         cursor = conn.cursor()
         cursor.execute("""
-        SELECT * FROM city LIMIT 3
+        SELECT * FROM city
         """)
 
-        row = cursor.fetchone()
+        rows = cursor.fetchall()
+        count = cursor.rowcount  # свойство объекта cursor
+        print("Всего строк: ", count)
 
-        while row is not None:
+        for row in rows:
             print(row)
-            row = cursor.fetchone()
+
 
     except Error as e:
         print(e)
