@@ -6,6 +6,9 @@ db = mysql.connector.connect(
 
 # Instantiate the cursor
 cursor = db.cursor()
+#cursor = db.cursor(dictionary=True) # тогда можно писать city["Name"]...
+#cursor = db.cursor(named_tuple=True) # тогда можно писать city.Name ...
+
 
 # Execute the query
 cursor.execute("""SELECT Name, CountryCode,
