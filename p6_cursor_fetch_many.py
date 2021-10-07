@@ -1,23 +1,27 @@
 from mysql.connector import MySQLConnection, Error
 
 
-def query_with_fetchall():
+
+def iter_row(cursor, size=10):
+    while True:
+        rows = cursor.fetchmany(size)
+        if not rows:
+            break
+        for row in rows:
+            yield row
+
+def query_with_fetchmany():
     try:
         conn = MySQLConnection(
             option_files="config.ini"
         )
         cursor = conn.cursor()
         cursor.execute("""
-        SELECT * FROM city
+        SELECT * FROM city LIMIT 3
         """)
 
-        rows = cursor.fetchall()
-        count = cursor.rowcount  # свойство объекта cursor
-        print("Всего строк: ", count)
-
-        for row in rows:
+        for row in iter_row(cursor, 10):
             print(row)
-
 
     except Error as e:
         print(e)
@@ -27,4 +31,4 @@ def query_with_fetchall():
         conn.close()
 
 if __name__ == '__main__':
-    query_with_fetchall()
+    query_with_fetchmany()
