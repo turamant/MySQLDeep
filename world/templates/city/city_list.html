@@ -3,7 +3,7 @@
 {% block content %}
 <h2>Все города</h2>
 <ul>
-{% for city in object_list %}
+{% for city in cities %}
     <li>{{ city.id }}. <a href="{% url 'city_detail' city.pk %}">{{ city.name }}</a></li>
 {% endfor %}
 </ul>

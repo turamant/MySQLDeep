@@ -1,21 +1,28 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<ul>
-    <li>code: {{ object.code }}</li>
-    <li>name: {{ object.name }}</li>
-    <li>continent: {{ object.continent }}</li>
-    <li>region: {{ object.region }}</li>
-    <li>surfacearea: {{ object.surfacearea }}</li>
-    <li>indepyear: {{ object.indepyear }}</li>
-    <li>population: {{ object.population }}</li>
-    <li>lifeexpectancy: {{ object.lifeexpectancy }}</li>
-    <li>gnp: {{ object.gnp }}</li>
-    <li>gnpold: {{ object.gnpold }}</li>
-    <li>localname: {{ object.localname }}</li>
-    <li>governmentform: {{ object.governmentform }}</li>
-    <li>headofstate: {{ object.headofstate }}</li>
-    <li>capital: {{ object.capital }}</li>
-    <li>code2: {{ object.gnp }}</li>
-</ul>
+<h2>Характеристика страны</h2>
+<ol>
+    <li>code: {{ country.code }}</li>
+    <li>name: {{ country.name }}</li>
+    <li>continent: {{ country.continent }}</li>
+    <li>region: {{ country.region }}</li>
+    <li>surfacearea: {{ country.surfacearea }}</li>
+    <li>indepyear: {{ country.indepyear }}</li>
+    <li>population: {{ country.population }}</li>
+    <li>lifeexpectancy: {{ country.lifeexpectancy }}</li>
+    <li>gnp: {{ country.gnp }}</li>
+    <li>gnpold: {{ country.gnpold }}</li>
+    <li>localname: {{ country.localname }}</li>
+    <li>governmentform: {{ country.governmentform }}</li>
+    <li>headofstate: {{ country.headofstate }}</li>
+    <li>capital: {{ country.capital }}</li>
+    <li>code2: {{ country.gnp }}</li>
+</ol>
+<h2>Количество городов в государстве : {{ quantity }}</h2>
+<ol>
+{% for city in cities %}
+    <li><a href="{% url 'city_detail' city.pk %}">{{ city }}</a></li>
+{% endfor %}
+</ol>
 {% endblock %}

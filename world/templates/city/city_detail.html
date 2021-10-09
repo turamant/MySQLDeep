@@ -1,11 +1,14 @@
 {% extends 'base.html' %}
 
 {% block content %}
+
 <ul>
-    <li>id: {{ object.id }}</li>
-    <li>name: {{ object.name }}</li>
-    <li><a href=""> countrycode: {{ object.countrycode }}</a></li>
-    <li>district: {{ object.district }}</li>
-    <li>population: {{ object.population }}</li>
+    <li>id: {{ city.id }}</li>
+    <li>name: {{ city.name }}</li>
+    <li>{{ city.countrycode }}</li>
+    <li>district: {{ city.district }}</li>
+    <li>population: {{ city.population }}</li>
 </ul>
+
+<a href="{% url 'country_list' %}">назад</a>
 {% endblock %}

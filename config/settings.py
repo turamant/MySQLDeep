@@ -39,6 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     'world',
+
+    'django_extensions',
 ]
 
 MIDDLEWARE = [
@@ -87,7 +89,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'world',
         'HOST': '127.0.0.1',
-        'PORT': '3306',
+        'PORT': 3306,
         'USER': 'gvg',
         'PASSWORD': 'passw1',
 

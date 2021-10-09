@@ -85,7 +85,6 @@ class AuthUserUserPermissions(models.Model):
         db_table = 'auth_user_user_permissions'
         unique_together = (('user', 'permission'),)
 
-
 class City(models.Model):
     id = models.AutoField(db_column='ID', primary_key=True)  # Field name made lowercase.
     name = models.CharField(db_column='Name', max_length=35)  # Field name made lowercase.
@@ -98,7 +97,7 @@ class City(models.Model):
         db_table = 'city'
 
     def __str__(self):
-        return f"City: {self.name}"
+        return f"{self.name}"
 
 
 class Country(models.Model):
