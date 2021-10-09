@@ -12,7 +12,7 @@ db = mysql.connector.connect(
 # Define the queries
 sql_select = """
     SELECT Name, CountryCode, Population
-    FROM world.city
+    FROM city.city
     WHERE CountryCode = %s
     ORDER_BY Population DESC
     LIMIT 3 """

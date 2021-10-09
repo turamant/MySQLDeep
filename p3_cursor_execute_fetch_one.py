@@ -13,7 +13,7 @@ cursor = db.cursor()
 # Execute the query
 cursor.execute("""SELECT Name, CountryCode,
                 Population
-                FROM world.city
+                FROM city.city
                 WHERE Population > 9000000
                 ORDER BY Population DESC"""
                 )

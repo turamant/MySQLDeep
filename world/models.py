@@ -102,9 +102,25 @@ class City(models.Model):
 
 
 class Country(models.Model):
+    ASIA = 'As'
+    EUROPE = 'Eu'
+    NORTH_AMERICA = 'NA'
+    AFRICA = 'Af'
+    OCEANIA = 'Oc'
+    ANTARCTICA = 'An'
+    SOUTH_AMERICA = 'SA'
+    CONTINENT = (
+        (ASIA, 'Asia'),
+        (EUROPE, 'Europe'),
+        (NORTH_AMERICA, 'North America'),
+        (AFRICA, 'Africa'),
+        (OCEANIA, 'Oceania'),
+        (ANTARCTICA, 'Antarctica'),
+        (SOUTH_AMERICA, 'South America'),
+    )
     code = models.CharField(db_column='Code', primary_key=True, max_length=3)  # Field name made lowercase.
     name = models.CharField(db_column='Name', max_length=52)  # Field name made lowercase.
-    continent = models.CharField(db_column='Continent', max_length=13)  # Field name made lowercase.
+    continent = models.CharField(db_column='Continent', max_length=13, choices=CONTINENT, default=ASIA)  # Field name made lowercase.
     region = models.CharField(db_column='Region', max_length=26)  # Field name made lowercase.
     surfacearea = models.DecimalField(db_column='SurfaceArea', max_digits=10, decimal_places=2)  # Field name made lowercase.
     indepyear = models.SmallIntegerField(db_column='IndepYear', blank=True, null=True)  # Field name made lowercase.

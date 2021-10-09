@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<ul>
+    <li>id: {{ object.id }}</li>
+    <li>name: {{ object.name }}</li>
+    <li><a href=""> countrycode: {{ object.countrycode }}</a></li>
+    <li>district: {{ object.district }}</li>
+    <li>population: {{ object.population }}</li>
+</ul>
+{% endblock %}

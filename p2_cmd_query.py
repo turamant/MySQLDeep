@@ -14,7 +14,7 @@ except:
 
 result = db.cmd_query(
     """SELECT *
-    FROM world.city
+    FROM city.city
     WHERE ID = 130"""
 )
 
