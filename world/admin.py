@@ -21,3 +21,7 @@ class CountryAdmin(admin.ModelAdmin):
 @admin.register(Countrylanguage)
 class CountrylanguageAdmin(admin.ModelAdmin):
     list_display = ('countrycode', 'language', 'isofficial', 'percentage')
+
+
+admin.site.site_title = "Best Prices 🔥🔥"
+admin.site.site_header = "Best Prices 🔥🔥"
